@@ -22,7 +22,7 @@ class ReportController < ApplicationController
       format.js
       format.html
     end
-    @categories_user = Category.by_user current_user.id
+    @categories_user = Category.categories_for_user current_user.id
   end
 
   def year_report
@@ -42,3 +42,4 @@ class ReportController < ApplicationController
     @savings = standardized saving(@income_amout, @expense_amout)
   end
 end
+
